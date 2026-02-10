@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block title %}My Orders - EStore{% endblock %}
+{% block content %}
+<h2 class="section-title">📦 My Orders</h2>
+
+{% if orders %}
+<div class="customer-orders-container">
+    {% for order in orders %}
+    <div class="customer-order-card">
+        <!-- Order Header -->
+        <div class="order-card-header">
+            <div class="order-header-left">
+                <h3>Order #{{ order.id }}</h3>
+                <p class="order-date">Placed on {{ order.created_at }}</p>
+            </div>
+            <span class="status status-{{ order.status }}">{{ order.status.upper() }}</span>
+        </div>
+        
+        <!-- Order Items -->
+        <div class="order-card-items">
+            {% for item in order['items'] %}
+            <div class="order-card-item">
+                <img src="{{ item.image_url }}" alt="{{ item.name }}">
+                <div class="item-info">
+                    <h4>{{ item.name }}</h4>
+                    <p>Qty: {{ item.quantity }} × ${{ "%.2f"|format(item.price) }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Order Timeline -->
+        <div class="customer-order-timeline">
+            <div class="timeline-step-small {% if order.status in ['pending', 'processing', 'shipped', 'delivered'] %}completed{% endif %}">
+                <div class="timeline-dot-small"></div>
+                <div class="timeline-label">
+                    <span class="timeline-icon">📦</span>
+                    <span>Ordered</span>
+                </div>
+            </div>
+            
+            <div class="timeline-line-small {% if order.status in ['processing', 'shipped', 'delivered'] %}active{% endif %}"></div>
+            
+            <div class="timeline-step-small {% if order.status in ['processing', 'shipped', 'delivered'] %}completed{% endif %}">
+                <div class="timeline-dot-small"></div>
+                <div class="timeline-label">
+                    <span class="timeline-icon">🔄</span>
+                    <span>Processing</span>
+                </div>
+            </div>
+            
+            <div class="timeline-line-small {% if order.status in ['shipped', 'delivered'] %}active{% endif %}"></div>
+            
+            <div class="timeline-step-small {% if order.status in ['shipped', 'delivered'] %}completed{% endif %}">
+                <div class="timeline-dot-small"></div>
+                <div class="timeline-label">
+                    <span class="timeline-icon">🚚</span>
+                    <span>Shipped</span>
+                </div>
+            </div>
+            
+            <div class="timeline-line-small {% if order.status == 'delivered' %}active{% endif %}"></div>
+            
+            <div class="timeline-step-small {% if order.status == 'delivered' %}completed{% endif %}">
+                <div class="timeline-dot-small"></div>
+                <div class="timeline-label">
+                    <span class="timeline-icon">✅</span>
+                    <span>Delivered</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Order Status Message -->
+        <div class="order-status-message">
+            {% if order.status == 'pending' %}
+                <p class="status-text">📦 Your order has been placed and is awaiting confirmation.</p>
+                <p class="delivery-estimate">Estimated delivery: <strong>5-7 business days</strong></p>
+            {% elif order.status == 'processing' %}
+                <p class="status-text">🔄 Your order is being processed and prepared for shipment.</p>
+                <p class="delivery-estimate">Estimated delivery: <strong>3-5 business days</strong></p>
+            {% elif order.status == 'shipped' %}
+                <p class="status-text">🚚 Your order has been shipped and is on the way!</p>
+                <p class="delivery-estimate">Expected delivery: <strong>2-3 business days</strong></p>
+            {% elif order.status == 'delivered' %}
+                <p class="status-text delivered">✅ Your order has been delivered successfully!</p>
+                <p class="delivery-estimate">Thank you for shopping with us!</p>
+            {% elif order.status == 'cancelled' %}
+                <p class="status-text cancelled">❌ This order has been cancelled.</p>
+            {% endif %}
+        </div>
+        
+        <!-- Order Footer -->
+        <div class="order-card-footer">
+            <div class="order-info-section">
+                <div class="order-total">
+                    <span>Total Amount:</span>
+                    <span class="total-price">${{ "%.2f"|format(order.total) }}</span>
+                </div>
+                <div class="order-payment">
+                    <span>Payment Method:</span>
+                    <span class="payment-method">💵 {{ order.payment_method or 'Cash on Delivery' }}</span>
+                </div>
+            </div>
+            
+            <!-- Cancel Order Button -->
+            {% if order.status in ['pending', 'processing'] %}
+            <div class="order-actions">
+                <a href="{{ url_for('cancel_order', order_id=order.id) }}" 
+                   class="btn btn-danger"
+                   onclick="return confirm('Are you sure you want to cancel this order? Stock will be restored.')">
+                    ❌ Cancel Order
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="orders-container">
+    <div class="empty-cart">
+        <div class="empty-cart-icon">📦</div>
+        <h3>No orders yet</h3>
+        <p>Start shopping to place your first order!</p>
+        <a href="{{ url_for('index') }}" class="btn btn-primary btn-large">Start Shopping</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+<style>
+.order-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.order-info-section {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.order-actions {
+    margin-left: auto;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+@media (max-width: 768px) {
+    .order-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .order-actions {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .btn-danger {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>

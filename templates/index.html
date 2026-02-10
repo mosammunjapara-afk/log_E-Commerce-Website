@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}Home - EStore{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to EStore</h1>
+    <p>Discover amazing products at unbeatable prices</p>
+</div>
+
+<!-- Search and Filter -->
+<div class="search-filter">
+    <form method="GET" action="{{ url_for('index') }}" class="search-bar">
+        <input type="text" name="search" class="search-input" placeholder="🔍 Search for products..." value="{{ search }}">
+        
+        <select name="sort" class="category-btn" onchange="this.form.submit()">
+            <option value="newest" {% if sort_by == 'newest' %}selected{% endif %}>Newest First</option>
+            <option value="price_low" {% if sort_by == 'price_low' %}selected{% endif %}>Price: Low to High</option>
+            <option value="price_high" {% if sort_by == 'price_high' %}selected{% endif %}>Price: High to Low</option>
+            <option value="rating" {% if sort_by == 'rating' %}selected{% endif %}>Highest Rated</option>
+        </select>
+        
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    
+    <div class="category-filter">
+        <a href="{{ url_for('index') }}" class="category-btn {% if not current_category %}active{% endif %}">All Products</a>
+        {% for category in categories %}
+            <a href="{{ url_for('index', category=category.id) }}" 
+               class="category-btn {% if current_category == category.id|string %}active{% endif %}">
+                {{ category.icon }} {{ category.name }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Featured Products -->
+{% if not search and not current_category %}
+<div class="featured-section">
+    <h2 class="section-title">⭐ Featured Products</h2>
+    <div class="products-grid">
+        {% for product in featured %}
+        <div class="product-card">
+            {% if product.rating >= 4.5 %}
+            <span class="product-badge">⭐ Top Rated</span>
+            {% endif %}
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <div class="product-rating">
+                    <span class="stars">
+                        {% for i in range(5) %}
+                            {% if i < product.rating|int %}⭐{% else %}☆{% endif %}
+                        {% endfor %}
+                    </span>
+                    <span class="review-count">({{ product.reviews_count }})</span>
+                </div>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">${{ "%.2f"|format(product.price) }}</p>
+                <p class="product-stock">
+                    {% if product.stock > 0 %}
+                        ✓ In Stock ({{ product.stock }} available)
+                    {% else %}
+                        ✕ Out of Stock
+                    {% endif %}
+                </p>
+                <div class="product-actions">
+                    <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- All Products -->
+<h2 class="section-title">
+    {% if search %}
+        🔍 Search Results for "{{ search }}"
+    {% elif current_category %}
+        📦 Filtered Products
+    {% else %}
+        🛍️ All Products
+    {% endif %}
+</h2>
+
+{% if products %}
+<div class="products-grid">
+    {% for product in products %}
+    <div class="product-card">
+        {% if product.rating >= 4.5 %}
+        <span class="product-badge">⭐ Top Rated</span>
+        {% elif product.stock < 10 %}
+        <span class="product-badge" style="background: #EF4444;">🔥 Low Stock</span>
+        {% endif %}
+        <img src="{{ product.image_url }}" alt="{{ product.name }}">
+        <div class="product-info">
+            <h3>{{ product.name }}</h3>
+            <div class="product-rating">
+                <span class="stars">
+                    {% for i in range(5) %}
+                        {% if i < product.rating|int %}⭐{% else %}☆{% endif %}
+                    {% endfor %}
+                </span>
+                <span class="review-count">({{ product.reviews_count }})</span>
+            </div>
+            <p class="product-description">{{ product.description }}</p>
+            <p class="product-price">${{ "%.2f"|format(product.price) }}</p>
+            <p class="product-stock">
+                {% if product.stock > 0 %}
+                    ✓ In Stock ({{ product.stock }} available)
+                {% else %}
+                    ✕ Out of Stock
+                {% endif %}
+            </p>
+            <div class="product-actions">
+                <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-cart">
+    <div class="empty-cart-icon">🔍</div>
+    <h3>No products found</h3>
+    <p>Try adjusting your search or filters</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">View All Products</a>
+</div>
+{% endif %}
+{% endblock %}

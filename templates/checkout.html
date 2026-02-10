@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% block title %}Checkout - EStore{% endblock %}
+{% block content %}
+<h2 class="section-title">💳 Checkout</h2>
+
+<div class="checkout-container">
+    <div class="checkout-form">
+        <h3 style="margin-bottom: 1.5rem;">Shipping Information</h3>
+        <form method="POST">
+            <div class="form-group">
+                <label for="shipping_address">Shipping Address *</label>
+                <textarea id="shipping_address" name="shipping_address" rows="4" required placeholder="Enter your complete shipping address with pin code"></textarea>
+            </div>
+            
+            <h3 style="margin: 2rem 0 1rem;">Payment Method</h3>
+            <div class="payment-options">
+                <label class="payment-option">
+                    <input type="radio" name="payment_method" value="Cash on Delivery" checked>
+                    <div class="payment-card">
+                        <span class="payment-icon">💵</span>
+                        <div class="payment-info">
+                            <strong>Cash on Delivery</strong>
+                            <p>Pay with cash when your order arrives</p>
+                            <small style="color: var(--gray);">No extra charges</small>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="payment-option">
+                    <input type="radio" name="payment_method" value="Google Pay (UPI)">
+                    <div class="payment-card">
+                        <span class="payment-icon">📱</span>
+                        <div class="payment-info">
+                            <strong>Google Pay / UPI</strong>
+                            <p>Pay using any UPI app (GPay, PhonePe, Paytm)</p>
+                            <small style="color: var(--secondary);">Instant confirmation</small>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="payment-option">
+                    <input type="radio" name="payment_method" value="PhonePe">
+                    <div class="payment-card">
+                        <span class="payment-icon">💜</span>
+                        <div class="payment-info">
+                            <strong>PhonePe</strong>
+                            <p>Quick and secure payment via PhonePe</p>
+                            <small style="color: var(--secondary);">Get instant cashback offers</small>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="payment-option">
+                    <input type="radio" name="payment_method" value="Paytm">
+                    <div class="payment-card">
+                        <span class="payment-icon">💙</span>
+                        <div class="payment-info">
+                            <strong>Paytm</strong>
+                            <p>Pay using Paytm wallet or UPI</p>
+                            <small style="color: var(--secondary);">Earn Paytm cashback</small>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="payment-option">
+                    <input type="radio" name="payment_method" value="Debit/Credit Card">
+                    <div class="payment-card">
+                        <span class="payment-icon">💳</span>
+                        <div class="payment-info">
+                            <strong>Debit / Credit Card</strong>
+                            <p>Visa, Mastercard, RuPay accepted</p>
+                            <small style="color: var(--gray);">Secure encrypted payment</small>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="payment-option">
+                    <input type="radio" name="payment_method" value="Net Banking">
+                    <div class="payment-card">
+                        <span class="payment-icon">🏦</span>
+                        <div class="payment-info">
+                            <strong>Net Banking</strong>
+                            <p>Pay directly from your bank account</p>
+                            <small style="color: var(--gray);">All major banks supported</small>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            
+            <div class="payment-note">
+                <p style="color: var(--gray); font-size: 0.875rem; margin: 1rem 0;">
+                    🔒 All online payments are processed through secure payment gateway. Your card details are never stored.
+                </p>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-large btn-full">Place Order</button>
+        </form>
+    </div>
+    
+    <div class="checkout-summary">
+        <h3>Order Summary</h3>
+        <div style="margin: 1.5rem 0;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; color: var(--gray);">
+                <span>Subtotal</span>
+                <span>${{ "%.2f"|format(total) }}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; color: var(--gray);">
+                <span>Shipping</span>
+                <span style="color: var(--secondary); font-weight: 600;">FREE</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; color: var(--gray);">
+                <span>Tax</span>
+                <span>Included</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: 700; color: var(--primary); padding-top: 1rem; border-top: 2px solid var(--border); margin-top: 1rem;">
+                <span>Total</span>
+                <span>${{ "%.2f"|format(total) }}</span>
+            </div>
+        </div>
+        
+        <div class="benefits-box">
+            <h4 style="font-size: 0.875rem; margin-bottom: 0.75rem; color: var(--dark);">✨ Your Benefits</h4>
+            <ul style="list-style: none; padding: 0; font-size: 0.875rem; color: var(--gray);">
+                <li style="margin-bottom: 0.5rem;">✅ Free Shipping on all orders</li>
+                <li style="margin-bottom: 0.5rem;">✅ 7-day easy returns</li>
+                <li style="margin-bottom: 0.5rem;">✅ Secure payment gateway</li>
+                <li>✅ 24/7 customer support</li>
+            </ul>
+        </div>
+        
+        <p style="color: var(--gray); font-size: 0.875rem; text-align: center; margin-top: 1.5rem;">
+            🔒 Secure checkout guaranteed
+        </p>
+    </div>
+</div>
+
+<style>
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-option {
+    cursor: pointer;
+    display: block;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.payment-option:hover .payment-card {
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.payment-option input[type="radio"]:checked + .payment-card {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.payment-icon {
+    font-size: 2rem;
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.payment-info {
+    flex: 1;
+}
+
+.payment-info strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--dark);
+}
+
+.payment-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--gray);
+}
+
+.payment-info small {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+}
+
+.payment-note {
+    background: #F0F9FF;
+    border-left: 4px solid #3B82F6;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.benefits-box {
+    background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+    border: 1px solid #86EFAC;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+</style>
+{% endblock %}

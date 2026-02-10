@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Wishlist - EStore{% endblock %}
+{% block content %}
+<h2 class="section-title">❤️ My Wishlist</h2>
+
+{% if items %}
+<div class="wishlist-container">
+    <div class="products-grid">
+        {% for product in items %}
+        <div class="product-card">
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <div class="product-rating">
+                    <span class="stars">
+                        {% for i in range(5) %}
+                            {% if i < product.rating|int %}⭐{% else %}☆{% endif %}
+                        {% endfor %}
+                    </span>
+                    <span class="review-count">({{ product.reviews_count }})</span>
+                </div>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">${{ "%.2f"|format(product.price) }}</p>
+                <div class="product-actions" style="display: flex; gap: 0.5rem;">
+                    <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-primary btn-small" style="flex: 1;">View</a>
+                    <a href="{{ url_for('remove_from_wishlist', product_id=product.id) }}" class="btn btn-danger btn-small">❌</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="cart-container">
+    <div class="empty-cart">
+        <div class="empty-cart-icon">❤️</div>
+        <h3>Your wishlist is empty</h3>
+        <p>Save products you love for later!</p>
+        <a href="{{ url_for('index') }}" class="btn btn-primary btn-large">Browse Products</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

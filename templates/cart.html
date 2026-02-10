@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Shopping Cart - EStore{% endblock %}
+{% block content %}
+<h2 class="section-title">🛒 Shopping Cart</h2>
+
+{% if cart_items %}
+<div class="cart-container">
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td>
+                    <div class="cart-product">
+                        <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
+                        <div class="cart-product-info">
+                            <h4>{{ item.product.name }}</h4>
+                            <p>SKU: #{{ item.product.id }}</p>
+                        </div>
+                    </div>
+                </td>
+                <td style="font-weight: 600; color: var(--primary);">${{ "%.2f"|format(item.product.price) }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('update_cart', product_id=item.product.id) }}" style="display: inline;">
+                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" 
+                               style="width: 60px; padding: 0.5rem; border: 2px solid var(--border); border-radius: 8px; text-align: center;"
+                               onchange="this.form.submit()">
+                    </form>
+                </td>
+                <td style="font-weight: 700; font-size: 1.125rem; color: var(--dark);">${{ "%.2f"|format(item.total) }}</td>
+                <td>
+                    <a href="{{ url_for('remove_from_cart', product_id=item.product.id) }}" class="btn btn-danger btn-small">🗑️ Remove</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <div class="cart-summary">
+        <h3>Order Summary</h3>
+        <div class="subtotal">
+            <span>Subtotal ({{ item_count }} items)</span>
+            <span>${{ "%.2f"|format(total) }}</span>
+        </div>
+        <div class="shipping">
+            <span>Shipping</span>
+            <span style="color: var(--secondary); font-weight: 600;">FREE</span>
+        </div>
+        <div class="total">
+            <span>Total</span>
+            <span>${{ "%.2f"|format(total) }}</span>
+        </div>
+        <a href="{{ url_for('checkout') }}" class="btn btn-primary btn-large btn-full">Proceed to Checkout</a>
+        <a href="{{ url_for('index') }}" class="btn btn-outline btn-full" style="margin-top: 0.75rem;">← Continue Shopping</a>
+    </div>
+</div>
+{% else %}
+<div class="cart-container">
+    <div class="empty-cart">
+        <div class="empty-cart-icon">🛒</div>
+        <h3>Your cart is empty</h3>
+        <p>Add some amazing products to get started!</p>
+        <a href="{{ url_for('index') }}" class="btn btn-primary btn-large">Start Shopping</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

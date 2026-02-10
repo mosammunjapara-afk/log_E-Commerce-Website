@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+{% block title %}Payment - EStore{% endblock %}
+{% block content %}
+<div class="payment-container">
+    <h2 class="section-title">💳 Complete Payment</h2>
+    
+    <div class="payment-details-card">
+        <div class="payment-header">
+            <h3>Order #{{ order_id }}</h3>
+            <p>Payment Method: <strong>{{ payment_method }}</strong></p>
+        </div>
+        
+        <div class="amount-display">
+            <span>Total Amount</span>
+            <span class="amount">₹{{ "%.2f"|format(amount) }}</span>
+        </div>
+        
+        {% if payment_method == 'Google Pay (UPI)' or payment_method == 'PhonePe' or payment_method == 'Paytm' %}
+        <div class="upi-payment">
+            <h4>🔐 Scan QR Code to Pay</h4>
+            <div class="qr-code-container">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi://pay?pa=merchant@paytm&pn=EStore&am={{ amount }}&cu=INR&tn=Order%20{{ order_id }}" alt="UPI QR Code">
+            </div>
+            <p class="upi-id">UPI ID: <code>merchant@paytm</code></p>
+            <p class="payment-note">Or use any UPI app to scan and pay</p>
+            
+            <div class="payment-apps">
+                <span>Supported Apps:</span>
+                <div class="app-icons">
+                    <span>📱 Google Pay</span>
+                    <span>💜 PhonePe</span>
+                    <span>💙 Paytm</span>
+                    <span>🏦 BHIM</span>
+                </div>
+            </div>
+        </div>
+        {% elif payment_method == 'Debit/Credit Card' %}
+        <div class="card-payment">
+            <h4>💳 Enter Card Details</h4>
+            <form id="card-payment-form" method="POST" action="{{ url_for('verify_payment') }}">
+                <input type="hidden" name="order_id" value="{{ order_id }}">
+                <input type="hidden" name="payment_method" value="{{ payment_method }}">
+                
+                <div class="form-group">
+                    <label for="card_number">Card Number</label>
+                    <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                </div>
+                
+                <div class="card-row">
+                    <div class="form-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="card_holder">Cardholder Name</label>
+                    <input type="text" id="card_holder" name="card_holder" placeholder="NAME ON CARD" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large btn-full">Pay ₹{{ "%.2f"|format(amount) }}</button>
+            </form>
+        </div>
+        {% elif payment_method == 'Net Banking' %}
+        <div class="netbanking-payment">
+            <h4>🏦 Select Your Bank</h4>
+            <form method="POST" action="{{ url_for('verify_payment') }}">
+                <input type="hidden" name="order_id" value="{{ order_id }}">
+                <input type="hidden" name="payment_method" value="{{ payment_method }}">
+                
+                <div class="bank-selection">
+                    <label class="bank-option">
+                        <input type="radio" name="bank" value="SBI" required>
+                        <span>State Bank of India</span>
+                    </label>
+                    <label class="bank-option">
+                        <input type="radio" name="bank" value="HDFC" required>
+                        <span>HDFC Bank</span>
+                    </label>
+                    <label class="bank-option">
+                        <input type="radio" name="bank" value="ICICI" required>
+                        <span>ICICI Bank</span>
+                    </label>
+                    <label class="bank-option">
+                        <input type="radio" name="bank" value="AXIS" required>
+                        <span>Axis Bank</span>
+                    </label>
+                    <label class="bank-option">
+                        <input type="radio" name="bank" value="PNB" required>
+                        <span>Punjab National Bank</span>
+                    </label>
+                    <label class="bank-option">
+                        <input type="radio" name="bank" value="BOB" required>
+                        <span>Bank of Baroda</span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large btn-full">Proceed to Bank Login</button>
+            </form>
+        </div>
+        {% endif %}
+        
+        <div class="payment-verification">
+            <h4>✅ After completing payment</h4>
+            <p>Click the button below to verify your payment:</p>
+            <form method="POST" action="{{ url_for('verify_payment') }}">
+                <input type="hidden" name="order_id" value="{{ order_id }}">
+                <input type="hidden" name="payment_method" value="{{ payment_method }}">
+                <input type="hidden" name="manual_verify" value="true">
+                
+                <div class="form-group">
+                    <label for="transaction_id">Transaction ID / Reference Number</label>
+                    <input type="text" id="transaction_id" name="transaction_id" placeholder="Enter your transaction ID" required>
+                </div>
+                
+                <button type="submit" class="btn btn-secondary btn-large btn-full">I Have Completed Payment</button>
+            </form>
+        </div>
+        
+        <div class="payment-help">
+            <p>🔒 All transactions are secure and encrypted</p>
+            <p>Need help? Contact us at <strong>support@estore.com</strong></p>
+        </div>
+    </div>
+</div>
+
+<style>
+.payment-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.payment-details-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.payment-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.payment-header h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.amount-display {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.amount-display .amount {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.qr-code-container {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+}
+
+.qr-code-container img {
+    max-width: 300px;
+    width: 100%;
+}
+
+.upi-id {
+    text-align: center;
+    font-size: 1.125rem;
+    margin: 1rem 0;
+}
+
+.upi-id code {
+    background: #F3F4F6;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+    color: var(--primary);
+}
+
+.payment-note {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.payment-apps {
+    background: #F9FAFB;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.app-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.app-icons span {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+}
+
+.card-payment, .netbanking-payment, .upi-payment {
+    margin-bottom: 2rem;
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+.bank-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.bank-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.bank-option:hover {
+    border-color: var(--primary);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.bank-option input[type="radio"] {
+    margin-right: 1rem;
+}
+
+.payment-verification {
+    background: #FEF3C7;
+    border: 2px solid #FCD34D;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.payment-verification h4 {
+    color: #92400E;
+    margin-bottom: 0.5rem;
+}
+
+.payment-help {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border);
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
+.payment-help p {
+    margin: 0.5rem 0;
+}
+
+#card_number {
+    letter-spacing: 2px;
+    font-family: monospace;
+}
+
+@media (max-width: 768px) {
+    .card-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+// Format card number
+document.getElementById('card_number')?.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\s/g, '');
+    let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+    e.target.value = formattedValue;
+});
+
+// Format expiry date
+document.getElementById('expiry')?.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length >= 2) {
+        value = value.slice(0, 2) + '/' + value.slice(2, 4);
+    }
+    e.target.value = value;
+});
+
+// Only allow numbers for CVV
+document.getElementById('cvv')?.addEventListener('input', function(e) {
+    e.target.value = e.target.value.replace(/\D/g, '');
+});
+</script>
+{% endblock %}

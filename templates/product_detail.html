@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} - EStore{% endblock %}
+
+{% block content %}
+<div class="product-detail">
+    <div class="product-image">
+        <img src="{{ product.image_url }}" alt="{{ product.name }}">
+        {% if session.user_id and not session.is_admin %}
+        <a href="{% if in_wishlist %}{{ url_for('remove_from_wishlist', product_id=product.id) }}{% else %}{{ url_for('add_to_wishlist', product_id=product.id) }}{% endif %}" 
+           class="wishlist-btn {% if in_wishlist %}active{% endif %}">
+            {% if in_wishlist %}❤️{% else %}🤍{% endif %}
+        </a>
+        {% endif %}
+    </div>
+    <div class="product-details">
+        <span class="category-badge">{{ product.category_name or 'Uncategorized' }}</span>
+        <h1>{{ product.name }}</h1>
+        <div class="product-rating">
+            <span class="stars">
+                {% for i in range(5) %}
+                    {% if i < product.rating|int %}⭐{% else %}☆{% endif %}
+                {% endfor %}
+            </span>
+            <span class="review-count">{{ product.rating }}/5.0 ({{ product.reviews_count }} reviews)</span>
+        </div>
+        <p class="price">${{ "%.2f"|format(product.price) }}</p>
+        <p class="description">{{ product.description }}</p>
+        <p class="stock" style="margin-bottom: 2rem;">
+            {% if product.stock > 0 %}
+                <span style="color: var(--secondary); font-weight: 600;">✓ In Stock</span> - {{ product.stock }} units available
+            {% else %}
+                <span style="color: var(--danger); font-weight: 600;">✕ Out of Stock</span>
+            {% endif %}
+        </p>
+        
+        {% if session.user_id and not session.is_admin and product.stock > 0 %}
+        <form method="POST" action="{{ url_for('add_to_cart', product_id=product.id) }}">
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ product.stock }}" required>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button type="submit" class="btn btn-primary btn-large">🛒 Add to Cart</button>
+                <a href="{{ url_for('index') }}" class="btn btn-outline btn-large">← Continue Shopping</a>
+            </div>
+        </form>
+        {% elif not session.user_id %}
+        <a href="{{ url_for('login') }}" class="btn btn-primary btn-large btn-full">Login to Purchase</a>
+        {% else %}
+        <a href="{{ url_for('index') }}" class="btn btn-secondary btn-large">← Back to Shop</a>
+        {% endif %}
+    </div>
+</div>
+
+{% if related %}
+<div class="related-products">
+    <h2>You May Also Like</h2>
+    <div class="products-grid">
+        {% for item in related %}
+        <div class="product-card">
+            <img src="{{ item.image_url }}" alt="{{ item.name }}">
+            <div class="product-info">
+                <h3>{{ item.name }}</h3>
+                <div class="product-rating">
+                    <span class="stars">
+                        {% for i in range(5) %}
+                            {% if i < item.rating|int %}⭐{% else %}☆{% endif %}
+                        {% endfor %}
+                    </span>
+                    <span class="review-count">({{ item.reviews_count }})</span>
+                </div>
+                <p class="product-price">${{ "%.2f"|format(item.price) }}</p>
+                <a href="{{ url_for('product_detail', product_id=item.id) }}" class="btn btn-primary btn-small btn-full">View Details</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EStore - Modern E-Commerce{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ url_for('index') }}" class="logo">EStore</a>
+            <ul class="nav-links">
+                {% if session.user_id %}
+                    {% if session.is_admin %}
+                        <li><a href="{{ url_for('admin_dashboard') }}">📊 Dashboard</a></li>
+                        <li><a href="{{ url_for('admin_products') }}">📦 Products</a></li>
+                        <li><a href="{{ url_for('admin_orders') }}">📋 Orders</a></li>
+                        <li><a href="{{ url_for('admin_logs') }}">📋 Logs</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('index') }}">🏠 Shop</a></li>
+                        <li><a href="{{ url_for('wishlist') }}">❤️ Wishlist</a></li>
+                        <li><a href="{{ url_for('cart') }}">🛒 Cart</a></li>
+                        <li><a href="{{ url_for('my_orders') }}">📦 Orders</a></li>
+                      
+                    {% endif %}
+                    <li><span class="username">{{ session.username }}</span></li>
+                    <li><a href="{{ url_for('logout') }}">🚪 Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('index') }}">🏠 Shop</a></li>
+                    <li><a href="{{ url_for('login') }}">🔐 Login</a></li>
+                    <li><a href="{{ url_for('register') }}">📝 Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About EStore</h3>
+                    <p>Your trusted online shopping destination for quality products at amazing prices.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for updates and exclusive offers!</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EStore. All rights reserved. Made with ❤️</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

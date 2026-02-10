@@ -1,0 +1,486 @@
+{% extends "base.html" %}
+{% block title %}System Logs - Admin{% endblock %}
+{% block content %}
+
+<h2 class="section-title">📋 System Activity Logs</h2>
+
+<!-- Log Statistics -->
+<div class="admin-stats" style="margin-bottom: 2rem;">
+    <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">📊</div>
+        <div class="stat-info">
+            <h3>{{ stats.get('total_logs', 0) }}</h3>
+            <p>Total Logs</p>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">⚠️</div>
+        <div class="stat-info">
+            <h3>{{ stats.get('recent_errors', 0) }}</h3>
+            <p>Errors (24h)</p>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);">🔐</div>
+        <div class="stat-info">
+            <h3>{{ stats.get('logs_by_type', {}).get('AUTH', 0) + stats.get('logs_by_type', {}).get('SECURITY', 0) }}</h3>
+            <p>Security Events</p>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7  100%);">👨‍💼</div>
+        <div class="stat-info">
+            <h3>{{ stats.get('logs_by_type', {}).get('ADMIN', 0) }}</h3>
+            <p>Admin Actions</p>
+        </div>
+    </div>
+</div>
+
+<!-- Filters -->
+<div class="logs-filters">
+    <form method="GET" action="{{ url_for('admin_logs') }}" class="filter-form">
+        <div class="filter-group">
+            <label for="log_type">Log Type:</label>
+            <select name="log_type" id="log_type" onchange="this.form.submit()">
+                <option value="">All Types</option>
+                <option value="AUTH" {% if filter_type == 'AUTH' %}selected{% endif %}>🔐 Authentication</option>
+                <option value="ADMIN" {% if filter_type == 'ADMIN' %}selected{% endif %}>👨‍💼 Admin Actions</option>
+                <option value="USER" {% if filter_type == 'USER' %}selected{% endif %}>👤 User Actions</option>
+                <option value="PRODUCT" {% if filter_type == 'PRODUCT' %}selected{% endif %}>📦 Products</option>
+                <option value="ORDER" {% if filter_type == 'ORDER' %}selected{% endif %}>📋 Orders</option>
+                <option value="PAYMENT" {% if filter_type == 'PAYMENT' %}selected{% endif %}>💳 Payments</option>
+                <option value="SECURITY" {% if filter_type == 'SECURITY' %}selected{% endif %}>⚠️ Security</option>
+                <option value="ERROR" {% if filter_type == 'ERROR' %}selected{% endif %}>❌ Errors</option>
+                <option value="DATABASE" {% if filter_type == 'DATABASE' %}selected{% endif %}>💾 Database</option>
+                <option value="VALIDATION" {% if filter_type == 'VALIDATION' %}selected{% endif %}>✅ Validation</option>
+                <option value="SYSTEM" {% if filter_type == 'SYSTEM' %}selected{% endif %}>🖥️ System</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="status">Status:</label>
+            <select name="status" id="status" onchange="this.form.submit()">
+                <option value="">All Status</option>
+                <option value="info" {% if filter_status == 'info' %}selected{% endif %}>ℹ️ Info</option>
+                <option value="success" {% if filter_status == 'success' %}selected{% endif %}>✅ Success</option>
+                <option value="warning" {% if filter_status == 'warning' %}selected{% endif %}>⚠️ Warning</option>
+                <option value="error" {% if filter_status == 'error' %}selected{% endif %}>❌ Error</option>
+                <option value="critical" {% if filter_status == 'critical' %}selected{% endif %}>🚨 Critical</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="limit">Show:</label>
+            <select name="limit" id="limit" onchange="this.form.submit()">
+                <option value="50" {% if limit == 50 %}selected{% endif %}>50 logs</option>
+                <option value="100" {% if limit == 100 %}selected{% endif %}>100 logs</option>
+                <option value="200" {% if limit == 200 %}selected{% endif %}>200 logs</option>
+                <option value="500" {% if limit == 500 %}selected{% endif %}>500 logs</option>
+            </select>
+        </div>
+        
+        <a href="{{ url_for('admin_logs') }}" class="btn btn-outline">🔄 Reset Filters</a>
+    </form>
+</div>
+
+<!-- Logs Table -->
+<div class="logs-container">
+    {% if logs %}
+    <div class="logs-table-wrapper">
+        <table class="logs-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Type</th>
+                    <th>User</th>
+                    <th>Action</th>
+                    <th>Details</th>
+                    <th>Status</th>
+                    <th>IP Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr class="log-row log-{{ log.status }}">
+                    <td class="log-time">
+                        <div class="time-display">
+                            <span class="date">{{ log.timestamp.split()[0] if log.timestamp else 'N/A' }}</span>
+                            <span class="time">{{ log.timestamp.split()[1] if log.timestamp and log.timestamp.split()|length > 1 else '' }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="log-type-badge log-type-{{ log.log_type }}">
+                            {% if log.log_type == 'AUTH' %}🔐
+                            {% elif log.log_type == 'ADMIN' %}👨‍💼
+                            {% elif log.log_type == 'USER' %}👤
+                            {% elif log.log_type == 'PRODUCT' %}📦
+                            {% elif log.log_type == 'ORDER' %}📋
+                            {% elif log.log_type == 'PAYMENT' %}💳
+                            {% elif log.log_type == 'SECURITY' %}⚠️
+                            {% elif log.log_type == 'ERROR' %}❌
+                            {% elif log.log_type == 'DATABASE' %}💾
+                            {% elif log.log_type == 'VALIDATION' %}✅
+                            {% elif log.log_type == 'SYSTEM' %}🖥️
+                            {% endif %}
+                            {{ log.log_type }}
+                        </span>
+                    </td>
+                    <td class="log-user">
+                        {% if log.username %}
+                            <strong>{{ log.username }}</strong>
+                            {% if log.user_id %}
+                            <small>(ID: {{ log.user_id }})</small>
+                            {% endif %}
+                        {% else %}
+                            <span class="text-muted">System</span>
+                        {% endif %}
+                    </td>
+                    <td class="log-action">{{ log.action }}</td>
+                    <td class="log-details">
+                        {% if log.details %}
+                            <div class="details-text">{{ log.details }}</div>
+                        {% else %}
+                            <span class="text-muted">-</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <span class="status-badge status-{{ log.status }}">
+                            {% if log.status == 'success' %}✅
+                            {% elif log.status == 'error' %}❌
+                            {% elif log.status == 'warning' %}⚠️
+                            {% elif log.status == 'critical' %}🚨
+                            {% else %}ℹ️
+                            {% endif %}
+                            {{ log.status.upper() }}
+                        </span>
+                    </td>
+                    <td class="log-ip">{{ log.ip_address or 'N/A' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty-cart">
+        <div class="empty-cart-icon">📋</div>
+        <h3>No logs found</h3>
+        <p>{% if filter_type or filter_status %}No activity logs match your filters{% else %}No activity logs available yet{% endif %}</p>
+        {% if filter_type or filter_status %}
+        <a href="{{ url_for('admin_logs') }}" class="btn btn-primary btn-large">Clear Filters</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+
+<style>
+.logs-filters {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.filter-form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--dark);
+}
+
+.filter-group select {
+    padding: 0.75rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    min-width: 150px;
+    background: white;
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.logs-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.logs-table-wrapper {
+    overflow-x: auto;
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.logs-table thead {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    color: white;
+}
+
+.logs-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.logs-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+}
+
+.log-row {
+    transition: background 0.2s;
+}
+
+.log-row:hover {
+    background: #F9FAFB;
+}
+
+/* Status-based row colors */
+.log-row.log-error {
+    background: #FEE2E2;
+}
+
+.log-row.log-error:hover {
+    background: #FECACA;
+}
+
+.log-row.log-critical {
+    background: #FEE2E2;
+    border-left: 4px solid #DC2626;
+}
+
+.log-row.log-warning {
+    background: #FEF3C7;
+}
+
+.log-row.log-warning:hover {
+    background: #FDE68A;
+}
+
+.log-row.log-success {
+    background: #D1FAE5;
+}
+
+.log-row.log-success:hover {
+    background: #A7F3D0;
+}
+
+.time-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.time-display .date {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.time-display .time {
+    font-size: 0.75rem;
+    color: var(--gray);
+}
+
+.log-type-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Log type colors */
+.log-type-AUTH {
+    background: #DBEAFE;
+    color: #1E40AF;
+}
+
+.log-type-ADMIN {
+    background: #E0E7FF;
+    color: #4338CA;
+}
+
+.log-type-USER {
+    background: #E0F2FE;
+    color: #0369A1;
+}
+
+.log-type-PRODUCT {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.log-type-ORDER {
+    background: #FCE7F3;
+    color: #9F1239;
+}
+
+.log-type-PAYMENT {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.log-type-SECURITY {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+.log-type-ERROR {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.log-type-DATABASE {
+    background: #F3E8FF;
+    color: #6B21A8;
+}
+
+.log-type-VALIDATION {
+    background: #FED7AA;
+    color: #9A3412;
+}
+
+.log-type-SYSTEM {
+    background: #E5E7EB;
+    color: #374151;
+}
+
+.log-user strong {
+    color: var(--primary);
+}
+
+.log-user small {
+    display: block;
+    color: var(--gray);
+    font-size: 0.75rem;
+}
+
+.log-action {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.details-text {
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--gray);
+}
+
+.details-text:hover {
+    white-space: normal;
+    overflow: visible;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-badge.status-success {
+    background: #D1FAE5;
+    color: #065F46;
+}
+
+.status-badge.status-error {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+.status-badge.status-warning {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.status-badge.status-critical {
+    background: #DC2626;
+    color: white;
+}
+
+.status-badge.status-info {
+    background: #DBEAFE;
+    color: #1E40AF;
+}
+
+.log-ip {
+    font-family: monospace;
+    font-size: 0.813rem;
+    color: var(--gray);
+}
+
+.text-muted {
+    color: var(--gray);
+    font-style: italic;
+}
+
+@media (max-width: 1200px) {
+    .logs-table {
+        font-size: 0.75rem;
+    }
+    
+    .logs-table th,
+    .logs-table td {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .details-text {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .filter-group select {
+        width: 100%;
+    }
+    
+    .logs-table-wrapper {
+        overflow-x: scroll;
+    }
+}
+</style>
+
+{% endblock %}

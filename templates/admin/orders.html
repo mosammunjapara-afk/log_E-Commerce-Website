@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Manage Orders - Admin{% endblock %}
+{% block content %}
+
+<h2 class="section-title">📋 Manage Orders</h2>
+
+<div class="admin-orders-container">
+    {% if orders %}
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td><strong>#{{ order.id }}</strong></td>
+                <td>{{ order.username }}</td>
+                <td>{{ order.item_count if order.item_count else '-' }} items</td>
+                <td style="font-weight: 700; color: var(--primary);">${{ "%.2f"|format(order.total) }}</td>
+                <td><span class="status status-{{ order.status }}">{{ order.status.upper() }}</span></td>
+                <td>{{ order.created_at }}</td>
+                <td>
+                    <a href="{{ url_for('admin_order_detail', order_id=order.id) }}" class="btn btn-primary btn-small">View Details</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="empty-cart">
+        <div class="empty-cart-icon">📋</div>
+        <h3>No orders yet</h3>
+        <p>Orders will appear here once customers start placing them</p>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

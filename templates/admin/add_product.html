@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Add Product - Admin{% endblock %}
+{% block content %}
+
+<div class="admin-header">
+    <h2 class="section-title">➕ Add New Product</h2>
+    <a href="{{ url_for('admin_products') }}" class="btn btn-outline">← Back to Products</a>
+</div>
+
+<div class="order-detail-card">
+    <form method="POST" class="product-form">
+        <div class="form-group">
+            <label for="name">Product Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Enter product name">
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description *</label>
+            <textarea id="description" name="description" rows="4" required placeholder="Enter product description"></textarea>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="price">Price ($) *</label>
+                <input type="number" id="price" name="price" step="0.01" min="0" required placeholder="0.00">
+            </div>
+            
+            <div class="form-group">
+                <label for="stock">Stock Quantity *</label>
+                <input type="number" id="stock" name="stock" min="0" required placeholder="0">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="category_id">Category *</label>
+            <select id="category_id" name="category_id" required>
+                <option value="">Select a category</option>
+                {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.icon }} {{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="image_url">Image URL *</label>
+            <input type="url" id="image_url" name="image_url" required placeholder="https://example.com/image.jpg">
+            <small style="color: var(--gray); font-size: 0.875rem;">Enter the full URL of the product image</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-large btn-full">Add Product</button>
+    </form>
+</div>
+
+<style>
+.product-form {
+    max-width: 800px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+{% endblock %}

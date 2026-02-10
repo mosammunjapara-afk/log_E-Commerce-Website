@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Manage Users - EStore Admin{% endblock %}
+{% block content %}
+<div class="admin-header">
+    <h2 class="section-title">👥 Manage Users</h2>
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">← Back to Dashboard</a>
+</div>
+
+<!-- User Statistics -->
+<div class="admin-stats" style="margin-bottom: 30px;">
+    <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);">👥</div>
+        <div class="stat-info">
+            <h3>{{ user_stats.total_users }}</h3>
+            <p>Total Users</p>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">🛡️</div>
+        <div class="stat-info">
+            <h3>{{ user_stats.admin_count }}</h3>
+            <p>Administrators</p>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);">🛍️</div>
+        <div class="stat-info">
+            <h3>{{ user_stats.customer_count }}</h3>
+            <p>Customers</p>
+        </div>
+    </div>
+</div>
+
+<!-- Search and Filter -->
+<div class="admin-filters" style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <form method="get" style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+        <div style="flex: 1; min-width: 250px;">
+            <input type="text" name="search" placeholder="🔍 Search by username or email..." 
+                   value="{{ search }}" 
+                   style="width: 100%; padding: 12px 20px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px;">
+        </div>
+        
+        <div>
+            <select name="sort" style="padding: 12px 20px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 14px; background: white;">
+                <option value="newest" {% if sort_by == 'newest' %}selected{% endif %}>Newest First</option>
+                <option value="oldest" {% if sort_by == 'oldest' %}selected{% endif %}>Oldest First</option>
+                <option value="name" {% if sort_by == 'name' %}selected{% endif %}>Name (A-Z)</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Apply Filters</button>
+        <a href="{{ url_for('admin_users') }}" class="btn btn-secondary">Clear</a>
+    </form>
+</div>
+
+<!-- Users Table -->
+<div class="admin-section">
+    <h3 class="admin-section-title">📋 All Registered Users</h3>
+    <div class="admin-table-container">
+        {% if users %}
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Orders</th>
+                    <th>Total Spent</th>
+                    <th>Registered Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td><strong>#{{ user.id }}</strong></td>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                {{ user.username[0].upper() }}
+                            </div>
+                            <strong>{{ user.username }}</strong>
+                        </div>
+                    </td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        {% if user.is_admin %}
+                        <span class="status" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
+                            🛡️ ADMIN
+                        </span>
+                        {% else %}
+                        <span class="status" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
+                            👤 CUSTOMER
+                        </span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if user.order_count > 0 %}
+                        <span style="background: #e3f2fd; color: #1976d2; padding: 5px 10px; border-radius: 15px; font-size: 13px; font-weight: 600;">
+                            📦 {{ user.order_count }} orders
+                        </span>
+                        {% else %}
+                        <span style="color: #999;">No orders</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if user.total_spent > 0 %}
+                        <strong style="color: #43a047;">${{ "%.2f"|format(user.total_spent) }}</strong>
+                        {% else %}
+                        <span style="color: #999;">$0.00</span>
+                        {% endif %}
+                    </td>
+                    <td style="color: #666;">{{ user.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-message" style="text-align: center; padding: 60px 20px;">
+            <div style="font-size: 64px; margin-bottom: 20px;">👥</div>
+            <h3 style="color: #666; margin-bottom: 10px;">No Users Found</h3>
+            <p style="color: #999;">
+                {% if search %}
+                No users match your search criteria.
+                {% else %}
+                No registered users yet.
+                {% endif %}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.admin-filters {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.admin-table tbody tr:hover {
+    background: #f8f9fa;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Edit Product - Admin{% endblock %}
+{% block content %}
+
+<div class="admin-header">
+    <h2 class="section-title">✏️ Edit Product</h2>
+    <a href="{{ url_for('admin_products') }}" class="btn btn-outline">← Back to Products</a>
+</div>
+
+<div class="order-detail-card">
+    <form method="POST" class="product-form">
+        <div class="form-group">
+            <label for="name">Product Name *</label>
+            <input type="text" id="name" name="name" value="{{ product.name }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description *</label>
+            <textarea id="description" name="description" rows="4" required>{{ product.description }}</textarea>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="price">Price ($) *</label>
+                <input type="number" id="price" name="price" step="0.01" min="0" value="{{ product.price }}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="stock">Stock Quantity *</label>
+                <input type="number" id="stock" name="stock" min="0" value="{{ product.stock }}" required>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="category_id">Category *</label>
+            <select id="category_id" name="category_id" required>
+                {% for category in categories %}
+                <option value="{{ category.id }}" {% if category.id == product.category_id %}selected{% endif %}>
+                    {{ category.icon }} {{ category.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="image_url">Image URL *</label>
+            <input type="url" id="image_url" name="image_url" value="{{ product.image_url }}" required>
+            <small style="color: var(--gray); font-size: 0.875rem;">Enter the full URL of the product image</small>
+        </div>
+        
+        <div class="form-group">
+            <label>Current Image Preview</label>
+            <img src="{{ product.image_url }}" alt="{{ product.name }}" style="max-width: 200px; border-radius: 8px; border: 2px solid var(--border);">
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-large btn-full">Update Product</button>
+    </form>
+</div>
+
+<style>
+.product-form {
+    max-width: 800px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+{% endblock %}

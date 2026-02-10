@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}Order #{{ order.id }} - Admin{% endblock %}
+{% block content %}
+
+<div class="order-detail-header">
+    <div>
+        <a href="{{ url_for('admin_orders') }}" class="back-btn">← Back to Orders</a>
+        <h2 class="section-title">ORDER DETAILS</h2>
+    </div>
+    <span class="order-id-badge">Order #{{ order.id }}</span>
+</div>
+
+<!-- Order Items -->
+<div class="order-detail-card">
+    <h3 class="card-title">📦 Order Items</h3>
+    {% for item in items %}
+    <div class="order-item-row">
+        <img src="{{ item.image_url }}" alt="{{ item.name }}" class="order-item-image">
+        <div class="order-item-details">
+            <h4>{{ item.name }}</h4>
+            <p class="item-meta">Quantity: {{ item.quantity }} × ${{ "%.2f"|format(item.price) }}</p>
+            <p class="item-total">Total: ${{ "%.2f"|format(item.quantity * item.price) }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <div class="order-total-section">
+        <div class="total-row">
+            <span>Subtotal:</span>
+            <span>${{ "%.2f"|format(order.total) }}</span>
+        </div>
+        <div class="total-row">
+            <span>Shipping:</span>
+            <span class="free-text">FREE</span>
+        </div>
+        <div class="total-row final-total">
+            <span>Total:</span>
+            <span>${{ "%.2f"|format(order.total) }}</span>
+        </div>
+    </div>
+</div>
+
+<!-- Order Status & Timeline -->
+<div class="order-detail-card">
+    <h3 class="card-title">📍 Order Status</h3>
+    
+    <div class="status-badge-large status-{{ order.status }}">
+        {% if order.status == 'pending' %}
+            📦 Order Placed
+        {% elif order.status == 'processing' %}
+            🔄 Processing
+        {% elif order.status == 'shipped' %}
+            🚚 Shipping Soon!
+        {% elif order.status == 'delivered' %}
+            ✅ Delivered
+        {% else %}
+            ❌ Cancelled
+        {% endif %}
+    </div>
+    
+    <!-- Order Timeline -->
+    <div class="order-timeline">
+        <div class="timeline-step {% if order.status in ['pending', 'processing', 'shipped', 'delivered'] %}completed{% endif %}">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>Ordered</h4>
+                <p>{{ order.created_at.split()[0] if order.created_at else 'N/A' }}</p>
+            </div>
+        </div>
+        
+        <div class="timeline-line {% if order.status in ['processing', 'shipped', 'delivered'] %}active{% endif %}"></div>
+        
+        <div class="timeline-step {% if order.status in ['processing', 'shipped', 'delivered'] %}completed{% endif %}">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>Shipped</h4>
+                <p>{% if order.status in ['processing', 'shipped', 'delivered'] %}In Progress{% else %}Pending{% endif %}</p>
+            </div>
+        </div>
+        
+        <div class="timeline-line {% if order.status in ['shipped', 'delivered'] %}active{% endif %}"></div>
+        
+        <div class="timeline-step {% if order.status in ['shipped', 'delivered'] %}completed{% endif %}">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>Out for Delivery</h4>
+                <p>{% if order.status in ['shipped', 'delivered'] %}In Progress{% else %}Pending{% endif %}</p>
+            </div>
+        </div>
+        
+        <div class="timeline-line {% if order.status == 'delivered' %}active{% endif %}"></div>
+        
+        <div class="timeline-step {% if order.status == 'delivered' %}completed{% endif %}">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>Delivered</h4>
+                <p>{% if order.status == 'delivered' %}Completed{% else %}Pending{% endif %}</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Update Status Form -->
+    <form method="POST" action="{{ url_for('admin_update_order_status', order_id=order.id) }}" class="status-update-form">
+        <label for="status">Update Order Status:</label>
+        <div class="status-update-row">
+            <select name="status" id="status" class="status-select">
+                <option value="pending" {% if order.status == 'pending' %}selected{% endif %}>📦 Pending</option>
+                <option value="processing" {% if order.status == 'processing' %}selected{% endif %}>🔄 Processing</option>
+                <option value="shipped" {% if order.status == 'shipped' %}selected{% endif %}>🚚 Shipped</option>
+                <option value="delivered" {% if order.status == 'delivered' %}selected{% endif %}>✅ Delivered</option>
+                <option value="cancelled" {% if order.status == 'cancelled' %}selected{% endif %}>❌ Cancelled</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Update Status</button>
+        </div>
+    </form>
+</div>
+
+<!-- Customer Information -->
+<div class="order-detail-card">
+    <h3 class="card-title">📍 Delivery Address</h3>
+    <div class="customer-info">
+        <p><strong>Customer:</strong> {{ order.username }}</p>
+        <p><strong>Email:</strong> {{ order.email }}</p>
+        <p><strong>Address:</strong></p>
+        <div class="address-box">
+            {{ order.shipping_address }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

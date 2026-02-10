@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard - EStore{% endblock %}
+{% block content %}
+<h2 class="section-title">📊 Admin Dashboard</h2>
+
+<div class="admin-stats">
+         <a href="{{ url_for('admin_products') }}" class="stat-card stat-card-clickable" style="text-decoration: none; color: inherit; display: block;">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">📦</div>
+        <div class="stat-info">
+            <h3>{{ total_products }}</h3>
+            <p>Total Products</p>
+        </div>
+    
+    
+   
+         <a href="{{ url_for('admin_orders') }}" class="stat-card stat-card-clickable" style="text-decoration: none; color: inherit; display: block;">
+         <div class="stat-icon" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">📋</div>
+        <div class="stat-info">
+            <h3>{{ total_orders }}</h3>
+            <p>Total Orders</p>
+        </div>
+  
+    
+    <!-- Clickable Total Users Card -->
+    <a href="{{ url_for('admin_users') }}" class="stat-card stat-card-clickable" style="text-decoration: none; color: inherit; display: block;">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);">👥</div>
+        <div class="stat-info">
+            <h3>{{ total_users }}</h3>
+            <p>Total Users</p>
+        </div>
+    </a>
+    
+    
+    <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);">💰</div>
+        <div class="stat-info">
+            <h3>${{ "%.2f"|format(total_revenue) }}</h3>
+            <p>Total Revenue</p>
+        </div>
+    </div>
+</div>
+
+<div class="admin-grid">
+    <!-- Recent Orders -->
+    <div class="admin-section">
+        <h3 class="admin-section-title">📋 Recent Orders</h3>
+        <div class="admin-table-container">
+            {% if recent_orders %}
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in recent_orders %}
+                    <tr>
+                        <td><strong>#{{ order.id }}</strong></td>
+                        <td>{{ order.username }}</td>
+                        <td style="font-weight: 600; color: var(--primary);">${{ "%.2f"|format(order.total) }}</td>
+                        <td><span class="status status-{{ order.status }}">{{ order.status.upper() }}</span></td>
+                        <td>{{ order.created_at }}</td>
+                        <td>
+                            <a href="{{ url_for('admin_order_detail', order_id=order.id) }}" class="btn btn-primary btn-small">View</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="empty-message">No orders yet</p>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Top Products -->
+    <div class="admin-section">
+        <h3 class="admin-section-title">⭐ Top Selling Products</h3>
+        <div class="top-products">
+            {% if top_products %}
+                {% for product in top_products %}
+                <div class="top-product-item">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                    <div class="top-product-info">
+                        <h4>{{ product.name }}</h4>
+                        <p>{{ product.sold }} sold | ${{ "%.2f"|format(product.revenue) }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+            <p class="empty-message">No sales data yet</p>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Low Stock Alert -->
+    <div class="admin-section">
+        <h3 class="admin-section-title">⚠️ Low Stock Alert</h3>
+        <div class="low-stock-list">
+            {% if low_stock %}
+                {% for product in low_stock %}
+                <div class="low-stock-item">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                    <div class="low-stock-info">
+                        <h4>{{ product.name }}</h4>
+                        <p class="stock-warning">Only {{ product.stock }} left!</p>
+                    </div>
+                    <a href="{{ url_for('admin_edit_product', product_id=product.id) }}" class="btn btn-secondary btn-small">Update</a>
+                </div>
+                {% endfor %}
+            {% else %}
+            <p class="empty-message">All products have sufficient stock</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<style>
+/* Clickable stat card hover effects */
+.stat-card-clickable {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card-clickable::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(79, 172, 254, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.stat-card-clickable:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.stat-card-clickable:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(79, 172, 254, 0.3);
+}
+
+.stat-card-clickable:active {
+    transform: translateY(-4px) scale(0.98);
+}
+
+/* Add a subtle "click me" indicator */
+.stat-card-clickable::after {
+    content: '👆 Click to view';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.stat-card-clickable:hover::after {
+    bottom: 10px;
+    opacity: 1;
+}
+
+/* Make the stat card position relative for absolute positioning */
+.stat-card-clickable {
+    position: relative;
+    padding-bottom: 35px; /* Make room for the "click to view" text */
+}
+
+/* Pulse animation on page load to draw attention */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    50% {
+        box-shadow: 0 4px 16px rgba(79, 172, 254, 0.3);
+    }
+}
+
+.stat-card-clickable {
+    animation: pulse 2s ease-in-out 3;
+    animation-delay: 1s;
+}
+</style>
+{% endblock %}

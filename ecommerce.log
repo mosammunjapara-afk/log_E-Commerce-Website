@@ -1,0 +1,700 @@
+2026-02-03 10:07:06,222 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:07:06,417 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.15:5000
+2026-02-03 10:07:06,418 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-03 10:07:06,421 - werkzeug - INFO -  * Restarting with stat
+2026-02-03 10:07:06,807 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:07:06,842 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 10:07:06,853 - werkzeug - INFO -  * Debugger PIN: 830-407-055
+2026-02-03 10:07:16,741 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:07:16,806 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.15:5000
+2026-02-03 10:07:16,806 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-03 10:07:16,806 - werkzeug - INFO -  * Restarting with stat
+2026-02-03 10:07:17,201 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:07:17,242 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 10:07:17,251 - werkzeug - INFO -  * Debugger PIN: 830-407-055
+2026-02-03 10:07:27,449 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:27] "GET / HTTP/1.1" 200 -
+2026-02-03 10:07:27,702 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:28,197 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-03 10:07:33,440 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:33] "GET /?search=&sort=price_high HTTP/1.1" 200 -
+2026-02-03 10:07:33,457 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:35,273 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:35] "GET /?search=&sort=price_high HTTP/1.1" 200 -
+2026-02-03 10:07:35,278 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:36,342 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:36] "GET /?search=&sort=price_high HTTP/1.1" 200 -
+2026-02-03 10:07:36,358 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:39,482 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:39] "GET /?search=&sort=price_low HTTP/1.1" 200 -
+2026-02-03 10:07:39,523 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:40,938 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:40] "GET /?search=&sort=price_low HTTP/1.1" 200 -
+2026-02-03 10:07:40,943 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:42,521 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:42] "GET /?category=1 HTTP/1.1" 200 -
+2026-02-03 10:07:42,534 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:43,682 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:43] "GET /?category=2 HTTP/1.1" 200 -
+2026-02-03 10:07:43,714 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:44,533 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:44] "GET /?category=3 HTTP/1.1" 200 -
+2026-02-03 10:07:44,555 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:47,353 - ECommerceLogger - INFO - [USER] Viewed product - Product: Espresso Coffee Maker (ID: 6)
+2026-02-03 10:07:47,387 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:47] "GET /product/6 HTTP/1.1" 200 -
+2026-02-03 10:07:47,397 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:49,440 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:49] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:07:49,451 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:07:55,690 - ECommerceLogger - WARNING - [SECURITY] Login failed - Username: nenu, Reason: User not found (User: nenu)
+2026-02-03 10:07:55,691 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:55] "POST /login HTTP/1.1" 200 -
+2026-02-03 10:07:55,703 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:07:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:03,069 - ECommerceLogger - WARNING - [SECURITY] Login failed - Username: nenu, Reason: User not found (User: nenu)
+2026-02-03 10:08:03,073 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:03] "POST /login HTTP/1.1" 200 -
+2026-02-03 10:08:03,091 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:04,932 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:04] "GET /register HTTP/1.1" 200 -
+2026-02-03 10:08:04,940 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:07,707 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:07] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:08:07,736 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:15,561 - ECommerceLogger - INFO - [AUTH] Login successful - Username: admin (User: admin)
+2026-02-03 10:08:15,561 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:08:15,602 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:15] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:08:15,622 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:19,711 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:19] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:08:19,729 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:24,400 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:24] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:08:24,418 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:41,853 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:41] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:08:41,873 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:54,345 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:54] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:08:54,365 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:55,286 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:55] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:08:55,310 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:08:57,167 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:57] "GET /admin/logs HTTP/1.1" 200 -
+2026-02-03 10:08:57,192 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:08:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:01,102 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:01] "GET /admin/logs?log_type=VALIDATION&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:09:01,129 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:04,951 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:04] "GET /admin/logs?log_type=PRODUCT&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:09:04,977 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:09,571 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:09] "GET /admin/logs?log_type=PRODUCT&status=&limit=50 HTTP/1.1" 200 -
+2026-02-03 10:09:09,585 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:11,907 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:11] "GET /admin/logs?log_type=PRODUCT&status=&limit=500 HTTP/1.1" 200 -
+2026-02-03 10:09:11,937 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:15,095 - ECommerceLogger - INFO - [AUTH] User logged out - Username: admin (User: admin)
+2026-02-03 10:09:15,095 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-03 10:09:15,095 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:15] "GET / HTTP/1.1" 200 -
+2026-02-03 10:09:15,134 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:17,165 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:17] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:09:17,189 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:25,224 - ECommerceLogger - INFO - [AUTH] Login successful - Username: admin (User: admin)
+2026-02-03 10:09:25,226 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:09:25,235 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:25] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:09:25,286 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:29,083 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:29] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:09:29,102 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:32,748 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:32] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:09:32,778 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:35,156 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:35] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:09:35,181 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:38,082 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:38] "GET /admin/logs HTTP/1.1" 200 -
+2026-02-03 10:09:38,103 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:09:58,813 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:58] "GET /admin/logs HTTP/1.1" 200 -
+2026-02-03 10:09:58,843 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:09:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:02,329 - ECommerceLogger - INFO - [AUTH] User logged out - Username: admin (User: admin)
+2026-02-03 10:10:02,338 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:02] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-03 10:10:02,357 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:02] "GET / HTTP/1.1" 200 -
+2026-02-03 10:10:02,411 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:07,220 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:07] "GET / HTTP/1.1" 200 -
+2026-02-03 10:10:07,253 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:12,151 - ECommerceLogger - INFO - [USER] Product search performed - Query: expired
+2026-02-03 10:10:12,151 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:12] "GET /?search=expired&sort=newest HTTP/1.1" 200 -
+2026-02-03 10:10:12,180 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:18,077 - ECommerceLogger - INFO - [USER] Product search performed - Query: iphon
+2026-02-03 10:10:18,079 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:18] "GET /?search=iphon&sort=newest HTTP/1.1" 200 -
+2026-02-03 10:10:18,100 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:22,514 - ECommerceLogger - INFO - [USER] Viewed product - Product: iPhone 15 Pro (ID: 2)
+2026-02-03 10:10:22,514 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:22] "GET /product/2 HTTP/1.1" 200 -
+2026-02-03 10:10:22,540 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:29,718 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:29] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:10:29,761 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:33,318 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:33] "GET /register HTTP/1.1" 200 -
+2026-02-03 10:10:33,342 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:47,399 - ECommerceLogger - WARNING - [VALIDATION] Validation error - Field: registration, Value: mosu, Reason: Password too short
+2026-02-03 10:10:47,399 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:47] "POST /register HTTP/1.1" 200 -
+2026-02-03 10:10:47,440 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:10:59,139 - ECommerceLogger - INFO - [AUTH] New user registered - Username: mosu, Email: anii@gmail.com (User: mosu)
+2026-02-03 10:10:59,139 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:59] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-02-03 10:10:59,139 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:59] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:10:59,167 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:10:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:06,203 - ECommerceLogger - INFO - [AUTH] Login successful - Username: mosu (User: mosu)
+2026-02-03 10:11:06,219 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:11:06,226 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:06] "GET / HTTP/1.1" 200 -
+2026-02-03 10:11:06,250 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:14,486 - ECommerceLogger - INFO - [USER] Viewed product - Product: Designer Leather Jacket (ID: 4) (User: mosu)
+2026-02-03 10:11:14,488 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:14] "GET /product/4 HTTP/1.1" 200 -
+2026-02-03 10:11:14,514 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:16,784 - ECommerceLogger - INFO - [USER] Item added to cart - Product: Designer Leather Jacket, Quantity: 1 (User: mosu)
+2026-02-03 10:11:16,785 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:16] "[32mPOST /add_to_cart/4 HTTP/1.1[0m" 302 -
+2026-02-03 10:11:16,813 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:16] "GET /cart HTTP/1.1" 200 -
+2026-02-03 10:11:16,831 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:18,792 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:18] "[32mPOST /update_cart/4 HTTP/1.1[0m" 302 -
+2026-02-03 10:11:18,805 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:18] "GET /cart HTTP/1.1" 200 -
+2026-02-03 10:11:18,823 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:21,631 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:21] "GET /checkout HTTP/1.1" 200 -
+2026-02-03 10:11:21,652 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:38,970 - ECommerceLogger - INFO - [ORDER] Order placed - Order ID: 1, Total: $599.98, Payment: Cash on Delivery (User: mosu)
+2026-02-03 10:11:38,971 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:38] "[32mPOST /checkout HTTP/1.1[0m" 302 -
+2026-02-03 10:11:44,575 - ECommerceLogger - INFO - [ORDER] Order placed - Order ID: 2, Total: $599.98, Payment: Cash on Delivery (User: mosu)
+2026-02-03 10:11:44,577 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:44] "[32mPOST /checkout HTTP/1.1[0m" 302 -
+2026-02-03 10:11:44,610 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:44] "GET /my_orders HTTP/1.1" 200 -
+2026-02-03 10:11:44,633 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:55,682 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:55] "GET / HTTP/1.1" 200 -
+2026-02-03 10:11:55,714 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:56,920 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:56] "GET /wishlist HTTP/1.1" 200 -
+2026-02-03 10:11:56,944 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:11:59,173 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:59] "GET / HTTP/1.1" 200 -
+2026-02-03 10:11:59,204 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:11:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:03,264 - ECommerceLogger - INFO - [USER] Viewed product - Product: Sony WH-1000XM5 (ID: 3) (User: mosu)
+2026-02-03 10:12:03,264 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:03] "GET /product/3 HTTP/1.1" 200 -
+2026-02-03 10:12:03,284 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:04,628 - ECommerceLogger - INFO - [USER] Item added to cart - Product: Sony WH-1000XM5, Quantity: 1 (User: mosu)
+2026-02-03 10:12:04,629 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:04] "[32mPOST /add_to_cart/3 HTTP/1.1[0m" 302 -
+2026-02-03 10:12:04,631 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:04] "GET /cart HTTP/1.1" 200 -
+2026-02-03 10:12:04,663 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:08,307 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:08] "GET /checkout HTTP/1.1" 200 -
+2026-02-03 10:12:08,326 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:11,509 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:11] "GET /wishlist HTTP/1.1" 200 -
+2026-02-03 10:12:11,530 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:13,333 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:13] "GET /cart HTTP/1.1" 200 -
+2026-02-03 10:12:13,353 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:16,658 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:16] "GET /my_orders HTTP/1.1" 200 -
+2026-02-03 10:12:16,684 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:20,872 - ECommerceLogger - INFO - [AUTH] User logged out - Username: mosu (User: mosu)
+2026-02-03 10:12:20,873 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:20] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-03 10:12:20,874 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:20] "GET / HTTP/1.1" 200 -
+2026-02-03 10:12:20,913 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:23,475 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:23] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:12:23,496 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:31,272 - ECommerceLogger - INFO - [AUTH] Login successful - Username: admin (User: admin)
+2026-02-03 10:12:31,272 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:12:31,291 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:31] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:12:31,311 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:46,890 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:46] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:12:46,926 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:51,958 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:51] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:12:51,982 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:12:59,913 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:59] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:12:59,940 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:12:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:13:01,024 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:01] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:13:01,045 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:13:07,176 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:07] "GET /admin/logs HTTP/1.1" 200 -
+2026-02-03 10:13:07,214 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:13:10,564 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:10] "GET /admin/logs?log_type=VALIDATION&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:13:10,581 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:13:12,754 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:12] "GET /admin/logs?log_type=DATABASE&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:13:12,774 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:13:15,057 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:15] "GET /admin/logs?log_type=ERROR&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:13:15,077 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:13:17,263 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:17] "GET /admin/logs?log_type=SECURITY&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:13:17,286 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:13:19,768 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:19] "GET /admin/logs?log_type=PAYMENT&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:13:19,787 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:13:22,269 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:22] "GET /admin/logs?log_type=ORDER&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:13:22,289 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:13:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:14:35,695 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:14:35] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:14:35,720 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:14:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:14:38,142 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:14:38] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:14:38,165 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:14:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:19:57,097 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:19:57] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:19:57,128 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:19:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:19:58,418 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:19:58] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:19:58,445 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:19:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:19:59,736 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:19:59] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:19:59,756 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:19:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:22:23,593 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:22:23,646 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.15:5000
+2026-02-03 10:22:23,646 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-03 10:22:23,646 - werkzeug - INFO -  * Restarting with stat
+2026-02-03 10:22:24,007 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:22:24,041 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 10:22:24,052 - werkzeug - INFO -  * Debugger PIN: 830-407-055
+2026-02-03 10:22:34,546 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:34] "GET / HTTP/1.1" 200 -
+2026-02-03 10:22:34,743 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:22:39,324 - ECommerceLogger - INFO - [AUTH] User logged out - Username: admin (User: admin)
+2026-02-03 10:22:39,327 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:39] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-03 10:22:39,327 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:39] "GET / HTTP/1.1" 200 -
+2026-02-03 10:22:39,367 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:22:43,058 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:43] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:22:43,090 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:22:49,994 - ECommerceLogger - INFO - [AUTH] Login successful - Username: mosu (User: mosu)
+2026-02-03 10:22:49,995 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:22:50,003 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:50] "GET / HTTP/1.1" 200 -
+2026-02-03 10:22:50,057 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:22:55,776 - ECommerceLogger - INFO - [AUTH] User logged out - Username: mosu (User: mosu)
+2026-02-03 10:22:55,776 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:55] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-03 10:22:55,797 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:55] "GET / HTTP/1.1" 200 -
+2026-02-03 10:22:55,825 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:22:59,113 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:59] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:22:59,134 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:22:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:13,988 - ECommerceLogger - WARNING - [SECURITY] Login failed - Username: aani, Reason: User not found (User: aani)
+2026-02-03 10:23:13,990 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:13] "POST /login HTTP/1.1" 200 -
+2026-02-03 10:23:14,008 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:17,329 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:17] "GET /register HTTP/1.1" 200 -
+2026-02-03 10:23:17,353 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:27,382 - ECommerceLogger - INFO - [AUTH] New user registered - Username: ani, Email: mosm@gmail.com (User: ani)
+2026-02-03 10:23:27,382 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:27] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-02-03 10:23:27,382 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:27] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:23:27,409 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:34,512 - ECommerceLogger - INFO - [AUTH] Login successful - Username: ani (User: ani)
+2026-02-03 10:23:34,513 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:34] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:23:34,523 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:34] "GET / HTTP/1.1" 200 -
+2026-02-03 10:23:34,554 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:36,356 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:36] "GET /?category=1 HTTP/1.1" 200 -
+2026-02-03 10:23:36,386 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:39,385 - ECommerceLogger - INFO - [USER] Viewed product - Product: MacBook Pro 16" (ID: 1) (User: ani)
+2026-02-03 10:23:39,403 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:39] "GET /product/1 HTTP/1.1" 200 -
+2026-02-03 10:23:39,423 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:40,889 - ECommerceLogger - INFO - [USER] Item added to cart - Product: MacBook Pro 16", Quantity: 1 (User: ani)
+2026-02-03 10:23:40,889 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:40] "[32mPOST /add_to_cart/1 HTTP/1.1[0m" 302 -
+2026-02-03 10:23:40,903 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:40] "GET /cart HTTP/1.1" 200 -
+2026-02-03 10:23:40,938 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:44,046 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:44] "[32mPOST /update_cart/1 HTTP/1.1[0m" 302 -
+2026-02-03 10:23:44,055 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:44] "GET /cart HTTP/1.1" 200 -
+2026-02-03 10:23:44,073 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:23:46,875 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:46] "GET /checkout HTTP/1.1" 200 -
+2026-02-03 10:23:46,910 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:23:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:24:00,977 - ECommerceLogger - INFO - [ORDER] Order placed - Order ID: 3, Total: $4999.98, Payment: Cash on Delivery (User: ani)
+2026-02-03 10:24:00,979 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:24:00] "[32mPOST /checkout HTTP/1.1[0m" 302 -
+2026-02-03 10:24:06,563 - ECommerceLogger - INFO - [ORDER] Order placed - Order ID: 4, Total: $4999.98, Payment: Cash on Delivery (User: ani)
+2026-02-03 10:24:06,563 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:24:06] "[32mPOST /checkout HTTP/1.1[0m" 302 -
+2026-02-03 10:24:06,592 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:24:06] "GET /my_orders HTTP/1.1" 200 -
+2026-02-03 10:24:06,611 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:24:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:24:58,956 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:24:58] "GET / HTTP/1.1" 200 -
+2026-02-03 10:24:58,984 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:24:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:25:13,279 - ECommerceLogger - INFO - [USER] Viewed product - Product: Sony WH-1000XM5 (ID: 3) (User: ani)
+2026-02-03 10:25:13,281 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:13] "GET /product/3 HTTP/1.1" 200 -
+2026-02-03 10:25:13,332 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:25:15,322 - ECommerceLogger - INFO - [USER] Added to wishlist - Product: Sony WH-1000XM5 (ID: 3) (User: ani)
+2026-02-03 10:25:15,324 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:15] "[32mGET /add_to_wishlist/3 HTTP/1.1[0m" 302 -
+2026-02-03 10:25:15,339 - ECommerceLogger - INFO - [USER] Viewed product - Product: Sony WH-1000XM5 (ID: 3) (User: ani)
+2026-02-03 10:25:15,347 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:15] "GET /product/3 HTTP/1.1" 200 -
+2026-02-03 10:25:15,397 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:25:18,666 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:18] "GET /wishlist HTTP/1.1" 200 -
+2026-02-03 10:25:18,703 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:25:21,744 - ECommerceLogger - INFO - [AUTH] User logged out - Username: ani (User: ani)
+2026-02-03 10:25:21,746 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:21] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-03 10:25:21,753 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:21] "GET / HTTP/1.1" 200 -
+2026-02-03 10:25:21,815 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:25:23,253 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:23] "GET /register HTTP/1.1" 200 -
+2026-02-03 10:25:23,302 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:25:24,436 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:24] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:25:24,465 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:25:32,258 - ECommerceLogger - INFO - [AUTH] Login successful - Username: admin (User: admin)
+2026-02-03 10:25:32,260 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:32] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:25:32,306 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:32] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:25:32,358 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:25:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:26:12,431 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:12] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:26:12,448 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:26:42,407 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:42] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:26:42,431 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:26:47,261 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:47] "GET /admin/orders/1 HTTP/1.1" 200 -
+2026-02-03 10:26:47,272 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:26:56,219 - ECommerceLogger - INFO - [ADMIN] Order status updated - Order ID: 1, Changed from "pending" to "processing" (User: admin)
+2026-02-03 10:26:56,220 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:56] "[32mPOST /admin/orders/update_status/1 HTTP/1.1[0m" 302 -
+2026-02-03 10:26:56,227 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:56] "GET /admin/orders/1 HTTP/1.1" 200 -
+2026-02-03 10:26:56,241 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:26:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:07,844 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:07] "GET /admin/logs HTTP/1.1" 200 -
+2026-02-03 10:27:07,895 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:11,387 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:11] "GET /admin/logs?log_type=SYSTEM&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:27:11,414 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:13,474 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:13] "GET /admin/logs?log_type=DATABASE&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:27:13,492 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:16,561 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:16] "GET /admin/logs?log_type=SECURITY&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:27:16,590 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:19,563 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:19] "GET /admin/logs?log_type=PAYMENT&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:27:19,598 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:22,388 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:22] "GET /admin/logs?log_type=ORDER&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:27:22,405 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:25,829 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:25] "GET /admin/logs?log_type=ADMIN&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:27:25,860 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:28,920 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:28] "GET /admin/logs?log_type=ADMIN&status=success&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:27:28,936 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:32,302 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:32] "GET /admin/logs?log_type=ADMIN&status=success&limit=200 HTTP/1.1" 200 -
+2026-02-03 10:27:32,317 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:39,529 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:39] "GET /admin/logs?log_type=&status=&limit=200 HTTP/1.1" 200 -
+2026-02-03 10:27:39,552 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:41,021 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:41] "GET /admin/logs?log_type=&status=info&limit=200 HTTP/1.1" 200 -
+2026-02-03 10:27:41,041 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:45,294 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:45] "GET /admin/logs?log_type=&status=warning&limit=200 HTTP/1.1" 200 -
+2026-02-03 10:27:45,311 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:47,644 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:47] "GET /admin/logs?log_type=&status=error&limit=200 HTTP/1.1" 200 -
+2026-02-03 10:27:47,663 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:27:55,275 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:55] "GET /admin/logs?log_type=DATABASE&status=error&limit=200 HTTP/1.1" 200 -
+2026-02-03 10:27:55,308 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:27:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:32:58,113 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:32:58] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:32:58,143 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:32:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:39:27,978 - werkzeug - INFO -  * Detected change in 'd:\\meesho\\meesho\\app.py', reloading
+2026-02-03 10:39:28,051 - werkzeug - INFO -  * Restarting with stat
+2026-02-03 10:39:29,029 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:39:29,191 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 10:39:29,208 - werkzeug - INFO -  * Debugger PIN: 830-407-055
+2026-02-03 10:42:20,731 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:42:20,830 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.15:5000
+2026-02-03 10:42:20,831 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-03 10:42:20,835 - werkzeug - INFO -  * Restarting with stat
+2026-02-03 10:42:21,511 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:42:21,594 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 10:42:21,612 - werkzeug - INFO -  * Debugger PIN: 830-407-055
+2026-02-03 10:42:31,125 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:31] "GET / HTTP/1.1" 200 -
+2026-02-03 10:42:31,503 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:42:32,002 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-03 10:42:40,838 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:40] "GET /?search=&sort=price_low HTTP/1.1" 200 -
+2026-02-03 10:42:40,878 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:42:43,327 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:43] "GET /?search=&sort=rating HTTP/1.1" 200 -
+2026-02-03 10:42:43,354 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:42:51,002 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:51] "GET /?category=1 HTTP/1.1" 200 -
+2026-02-03 10:42:51,035 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:42:52,984 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:52] "GET /?category=2 HTTP/1.1" 200 -
+2026-02-03 10:42:53,030 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:42:54,306 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:54] "GET /?category=3 HTTP/1.1" 200 -
+2026-02-03 10:42:54,333 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:42:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:01,159 - ECommerceLogger - INFO - [USER] Viewed product - Product: Espresso Coffee Maker (ID: 6)
+2026-02-03 10:43:01,211 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:01] "GET /product/6 HTTP/1.1" 200 -
+2026-02-03 10:43:01,235 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:03,357 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:03] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:43:03,378 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:05,296 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:05] "GET /register HTTP/1.1" 200 -
+2026-02-03 10:43:05,374 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:20,082 - ECommerceLogger - INFO - [AUTH] New user registered - Username: nm, Email: nenu@gmail.com (User: nm)
+2026-02-03 10:43:20,084 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:20] "[32mPOST /register HTTP/1.1[0m" 302 -
+2026-02-03 10:43:20,116 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:20] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:43:20,191 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:25,800 - ECommerceLogger - INFO - [AUTH] Login successful - Username: nm (User: nm)
+2026-02-03 10:43:25,801 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:43:25,824 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:25] "GET / HTTP/1.1" 200 -
+2026-02-03 10:43:25,917 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:29,475 - ECommerceLogger - INFO - [AUTH] User logged out - Username: nm (User: nm)
+2026-02-03 10:43:29,485 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:29] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-03 10:43:29,498 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:29] "GET / HTTP/1.1" 200 -
+2026-02-03 10:43:29,542 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:33,301 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:33] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:43:33,335 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:44,904 - ECommerceLogger - INFO - [AUTH] Login successful - Username: admin (User: admin)
+2026-02-03 10:43:44,907 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:43:44,965 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:44] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:43:45,031 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:43:48,013 - ECommerceLogger - ERROR - [ERROR] Admin Users Error - Error loading users page: admin/users.html
+ (User: admin)
+2026-02-03 10:43:48,073 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:48] "[35m[1mGET /admin/users HTTP/1.1[0m" 500 -
+2026-02-03 10:43:48,169 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:48] "GET /admin/users?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-02-03 10:43:48,205 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:48] "GET /admin/users?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-02-03 10:43:48,224 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:48] "GET /admin/users?__debugger__=yes&cmd=resource&f=console.png&s=1dug19RClHYwGilp1HIO HTTP/1.1" 200 -
+2026-02-03 10:43:48,282 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:43:48] "GET /admin/users?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-02-03 10:44:20,112 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:20] "GET /admin/users HTTP/1.1" 200 -
+2026-02-03 10:44:20,124 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:44:42,230 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:42] "GET /admin/users?search=&sort=name HTTP/1.1" 200 -
+2026-02-03 10:44:42,271 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:44:46,682 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:46] "GET /admin/users?search=&sort=oldest HTTP/1.1" 200 -
+2026-02-03 10:44:46,718 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:44:47,884 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:47] "GET /admin/users?search=&sort=oldest HTTP/1.1" 200 -
+2026-02-03 10:44:47,905 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:44:52,636 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:52] "GET /admin/users?search=&sort=newest HTTP/1.1" 200 -
+2026-02-03 10:44:52,675 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:44:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:45:01,916 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:45:01] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:45:01,945 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:45:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:45:14,420 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:45:14] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:45:14,502 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:45:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:46:10,558 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:46:10] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:46:10,589 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:46:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:47:21,505 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:47:21] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:47:21,528 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:47:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:48:01,427 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:01] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:48:01,455 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:48:06,034 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:06] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:48:06,048 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:48:08,731 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:08] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:48:08,753 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:48:09,868 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:09] "GET /admin/users HTTP/1.1" 200 -
+2026-02-03 10:48:09,903 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:48:18,334 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:18] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:48:18,368 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:48:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:49:52,135 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:49:52] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:49:52,155 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:49:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:49:54,594 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:49:54] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:49:54,618 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:49:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:50:01,951 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:01] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:50:01,979 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:50:10,065 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:10] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:50:10,095 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:50:13,080 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:13] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:50:13,108 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:50:16,287 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:16] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:50:16,314 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:50:18,171 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:18] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:50:18,192 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:50:21,275 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:21] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:50:21,296 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:50:24,272 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:24] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:50:24,300 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:50:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:27,418 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:27] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:51:27,436 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:29,974 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:29] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:51:29,991 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:37,217 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:37] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:51:37,260 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:39,637 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:39] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:51:39,667 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:39,671 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:39] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:51:39,702 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:41,529 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:41] "GET /admin/users HTTP/1.1" 200 -
+2026-02-03 10:51:41,559 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:45,974 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:45] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:51:46,001 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:51,144 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:51] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:51:51,173 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:54,182 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:54] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:51:54,219 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:55,639 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:55] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:51:55,664 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:51:57,706 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:57] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:51:57,745 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:51:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:52:24,357 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:52:24] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:52:24,383 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:52:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:53:28,856 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:53:28] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:53:28,869 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:53:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:53:29,639 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:53:29] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:53:29,657 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:53:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:54:47,481 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:54:47] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:54:47,500 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:54:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:55:06,352 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:06] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:55:06,373 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:55:10,319 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:10] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:55:10,350 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:55:12,897 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:12] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:55:12,920 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:55:14,844 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:14] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:55:14,877 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:55:16,627 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:16] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:55:16,651 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:55:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:55:52,417 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:55:52,505 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.15:5000
+2026-02-03 10:55:52,507 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-03 10:55:52,510 - werkzeug - INFO -  * Restarting with stat
+2026-02-03 10:55:53,086 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 10:55:53,165 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 10:55:53,184 - werkzeug - INFO -  * Debugger PIN: 830-407-055
+2026-02-03 10:56:28,700 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:28] "GET / HTTP/1.1" 200 -
+2026-02-03 10:56:29,092 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:56:29,228 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-03 10:56:32,165 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:32] "GET /login HTTP/1.1" 200 -
+2026-02-03 10:56:32,194 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:56:43,637 - ECommerceLogger - INFO - [AUTH] Login successful - Username: admin (User: admin)
+2026-02-03 10:56:43,643 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 10:56:43,699 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:43] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:56:43,755 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:56:45,304 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:45] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:56:45,323 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:56:51,365 - ECommerceLogger - INFO - [PRODUCT] Product deleted - Product ID: 2, Name: iPhone 15 Pro (User: admin)
+2026-02-03 10:56:51,368 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:51] "[32mGET /admin/products/delete/2 HTTP/1.1[0m" 302 -
+2026-02-03 10:56:51,388 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:51] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:56:51,408 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:56:53,530 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:53] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:56:53,547 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:56:57,073 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:57] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:56:57,105 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:56:59,785 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:59] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:56:59,823 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:56:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:06,431 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:06] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:57:06,461 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:11,296 - ECommerceLogger - INFO - [PRODUCT] Product deleted - Product ID: 1, Name: MacBook Pro 16" (User: admin)
+2026-02-03 10:57:11,302 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:11] "[32mGET /admin/products/delete/1 HTTP/1.1[0m" 302 -
+2026-02-03 10:57:11,323 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:11] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:57:11,381 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:14,396 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:14] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:57:14,408 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:17,010 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:17] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:57:17,029 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:18,072 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:18] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:57:18,094 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:27,201 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:27] "GET /admin/orders/2 HTTP/1.1" 200 -
+2026-02-03 10:57:27,218 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:37,236 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:37] "GET /admin/orders/3 HTTP/1.1" 200 -
+2026-02-03 10:57:37,260 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:51,668 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:51] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:57:51,714 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:52,561 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:52] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:57:52,591 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:53,274 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:53] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:57:53,311 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:57:54,955 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:54] "GET /admin/orders/4 HTTP/1.1" 200 -
+2026-02-03 10:57:54,981 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:57:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:02,795 - ECommerceLogger - INFO - [ADMIN] Order status updated - Order ID: 4, Changed from "pending" to "cancelled" (User: admin)
+2026-02-03 10:58:02,800 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:02] "[32mPOST /admin/orders/update_status/4 HTTP/1.1[0m" 302 -
+2026-02-03 10:58:02,820 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:02] "GET /admin/orders/4 HTTP/1.1" 200 -
+2026-02-03 10:58:03,075 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:07,299 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:07] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:58:07,387 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:08,756 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:08] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:58:08,973 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:24,157 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:24] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:58:24,171 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:25,025 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:25] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 10:58:25,036 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:28,206 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:28] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:58:28,227 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:32,276 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:32] "GET /admin/orders/3 HTTP/1.1" 200 -
+2026-02-03 10:58:32,299 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:37,756 - ECommerceLogger - INFO - [ADMIN] Order status updated - Order ID: 3, Changed from "pending" to "pending" (User: admin)
+2026-02-03 10:58:37,758 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:37] "[32mPOST /admin/orders/update_status/3 HTTP/1.1[0m" 302 -
+2026-02-03 10:58:37,767 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:37] "GET /admin/orders/3 HTTP/1.1" 200 -
+2026-02-03 10:58:37,791 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:44,739 - ECommerceLogger - INFO - [ADMIN] Order status updated - Order ID: 3, Changed from "pending" to "cancelled" (User: admin)
+2026-02-03 10:58:44,741 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:44] "[32mPOST /admin/orders/update_status/3 HTTP/1.1[0m" 302 -
+2026-02-03 10:58:44,750 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:44] "GET /admin/orders/3 HTTP/1.1" 200 -
+2026-02-03 10:58:44,781 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:47,722 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:47] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:58:47,732 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:51,461 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:51] "GET /admin/orders/2 HTTP/1.1" 200 -
+2026-02-03 10:58:51,481 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:58:56,728 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:56] "GET /admin/orders/1 HTTP/1.1" 200 -
+2026-02-03 10:58:56,742 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:58:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:00,598 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:00] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 10:59:00,616 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:02,161 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:02] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:59:02,195 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:04,242 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:04] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 10:59:04,254 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:06,298 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:06] "GET /admin/logs HTTP/1.1" 200 -
+2026-02-03 10:59:06,313 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:08,733 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:08] "GET /admin/logs?log_type=VALIDATION&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:59:08,750 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:10,991 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:10] "GET /admin/logs?log_type=SYSTEM&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:59:11,023 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:14,303 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:14] "GET /admin/logs?log_type=DATABASE&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:59:14,317 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:20,461 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:20] "GET /admin/logs?log_type=ERROR&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:59:20,479 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:26,555 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:26] "GET /admin/logs?log_type=SECURITY&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:59:26,590 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:29,299 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:29] "GET /admin/logs?log_type=PAYMENT&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:59:29,320 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:32,316 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:32] "GET /admin/logs?log_type=ORDER&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:59:32,344 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 10:59:43,587 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:43] "GET /admin/logs?log_type=PRODUCT&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 10:59:43,616 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 10:59:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:02,769 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:02] "GET /admin/logs?log_type=USER&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 11:00:02,790 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:06,405 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:06] "GET /admin/logs?log_type=ADMIN&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 11:00:06,428 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:10,024 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:10] "GET /admin/logs?log_type=AUTH&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 11:00:10,040 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:13,322 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:13] "GET /admin/logs?log_type=AUTH&status=info&limit=100 HTTP/1.1" 200 -
+2026-02-03 11:00:13,345 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:16,177 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:16] "GET /admin/logs?log_type=AUTH&status=success&limit=100 HTTP/1.1" 200 -
+2026-02-03 11:00:16,196 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:18,409 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:18] "GET /admin/logs?log_type=AUTH&status=warning&limit=100 HTTP/1.1" 200 -
+2026-02-03 11:00:18,435 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:20,802 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:20] "GET /admin/logs?log_type=AUTH&status=error&limit=100 HTTP/1.1" 200 -
+2026-02-03 11:00:20,830 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:23,451 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:23] "GET /admin/logs?log_type=AUTH&status=critical&limit=100 HTTP/1.1" 200 -
+2026-02-03 11:00:23,467 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:28,789 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:28] "GET /admin/logs?log_type=AUTH&status=critical&limit=500 HTTP/1.1" 200 -
+2026-02-03 11:00:28,811 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:30,115 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:30] "GET /admin/logs HTTP/1.1" 200 -
+2026-02-03 11:00:30,131 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:39,204 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:39] "GET / HTTP/1.1" 200 -
+2026-02-03 11:00:39,237 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:50,949 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:50] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 11:00:50,966 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:00:52,929 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:52] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 11:00:52,944 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:00:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:01:22,544 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:01:22] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 11:01:22,575 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:01:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 11:09:00,156 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:09:00] "[33mGET /api/health HTTP/1.1[0m" 404 -
+2026-02-03 11:09:03,620 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:09:03] "[33mGET /api/health HTTP/1.1[0m" 404 -
+2026-02-03 11:09:06,042 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 11:09:06] "[33mGET /api/health HTTP/1.1[0m" 404 -
+2026-02-03 12:16:48,053 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Admin\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\numpy\\compat\\__init__.py', reloading
+2026-02-03 12:16:48,216 - werkzeug - INFO -  * Restarting with stat
+2026-02-03 12:16:49,295 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 12:16:49,363 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 12:16:49,376 - werkzeug - INFO -  * Debugger PIN: 830-407-055
+2026-02-03 12:42:23,190 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 12:42:23,251 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.15:5000
+2026-02-03 12:42:23,251 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-03 12:42:23,251 - werkzeug - INFO -  * Restarting with stat
+2026-02-03 12:42:23,715 - ECommerceLogger - INFO - [SYSTEM] Application started
+2026-02-03 12:42:23,781 - werkzeug - WARNING -  * Debugger is active!
+2026-02-03 12:42:23,835 - werkzeug - INFO -  * Debugger PIN: 830-407-055
+2026-02-03 12:42:32,925 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:32] "GET / HTTP/1.1" 200 -
+2026-02-03 12:42:33,110 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:42:33,217 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-02-03 12:42:43,933 - ECommerceLogger - INFO - [USER] Viewed product - Product: Sony WH-1000XM5 (ID: 3)
+2026-02-03 12:42:43,956 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:43] "GET /product/3 HTTP/1.1" 200 -
+2026-02-03 12:42:43,980 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:42:45,879 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:45] "GET /login HTTP/1.1" 200 -
+2026-02-03 12:42:45,900 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:42:57,896 - ECommerceLogger - INFO - [AUTH] Login successful - Username: mosu (User: mosu)
+2026-02-03 12:42:57,900 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 12:42:57,913 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:57] "GET / HTTP/1.1" 200 -
+2026-02-03 12:42:57,971 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:42:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:01,912 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:01] "GET /?category=2 HTTP/1.1" 200 -
+2026-02-03 12:43:01,942 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:04,881 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:04] "GET /?category=6 HTTP/1.1" 200 -
+2026-02-03 12:43:04,899 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:09,282 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:09] "GET /?category=1 HTTP/1.1" 200 -
+2026-02-03 12:43:09,294 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:17,768 - ECommerceLogger - INFO - [USER] Viewed product - Product: Sony WH-1000XM5 (ID: 3) (User: mosu)
+2026-02-03 12:43:17,771 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:17] "GET /product/3 HTTP/1.1" 200 -
+2026-02-03 12:43:17,784 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:19,090 - ECommerceLogger - INFO - [USER] Item added to cart - Product: Sony WH-1000XM5, Quantity: 1 (User: mosu)
+2026-02-03 12:43:19,111 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:19] "[32mPOST /add_to_cart/3 HTTP/1.1[0m" 302 -
+2026-02-03 12:43:19,131 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:19] "GET /cart HTTP/1.1" 200 -
+2026-02-03 12:43:19,160 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:23,233 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:23] "GET /checkout HTTP/1.1" 200 -
+2026-02-03 12:43:23,255 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:41,854 - ECommerceLogger - INFO - [ORDER] Order placed - Order ID: 5, Total: $399.99, Payment: Cash on Delivery (User: mosu)
+2026-02-03 12:43:41,856 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:41] "[32mPOST /checkout HTTP/1.1[0m" 302 -
+2026-02-03 12:43:41,886 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:41] "GET /my_orders HTTP/1.1" 200 -
+2026-02-03 12:43:41,906 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:46,290 - ECommerceLogger - INFO - [AUTH] User logged out - Username: mosu (User: mosu)
+2026-02-03 12:43:46,291 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:46] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-02-03 12:43:46,301 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:46] "GET / HTTP/1.1" 200 -
+2026-02-03 12:43:46,319 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:49,026 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:49] "GET /login HTTP/1.1" 200 -
+2026-02-03 12:43:49,050 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:43:56,494 - ECommerceLogger - INFO - [AUTH] Login successful - Username: admin (User: admin)
+2026-02-03 12:43:56,494 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:56] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-02-03 12:43:56,534 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:56] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 12:43:56,672 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:43:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:01,351 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:01] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 12:44:01,365 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:04,720 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:04] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 12:44:04,749 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:05,504 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:05] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 12:44:05,522 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:08,723 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:08] "GET /admin/orders HTTP/1.1" 200 -
+2026-02-03 12:44:08,743 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:09,645 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:09] "GET /admin/products HTTP/1.1" 200 -
+2026-02-03 12:44:09,662 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:10,919 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:10] "GET /admin/dashboard HTTP/1.1" 200 -
+2026-02-03 12:44:10,940 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:11,993 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:11] "GET /admin/users HTTP/1.1" 200 -
+2026-02-03 12:44:12,005 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:16,866 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:16] "GET /admin/logs HTTP/1.1" 200 -
+2026-02-03 12:44:16,866 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:29,898 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:29] "GET /admin/logs?log_type=AUTH&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 12:44:29,915 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:34,858 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:34] "GET /admin/logs?log_type=ADMIN&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 12:44:34,878 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:52,094 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:52] "GET /admin/logs?log_type=PAYMENT&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 12:44:52,121 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-02-03 12:44:54,891 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:54] "GET /admin/logs?log_type=ORDER&status=&limit=100 HTTP/1.1" 200 -
+2026-02-03 12:44:54,914 - werkzeug - INFO - 127.0.0.1 - - [03/Feb/2026 12:44:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
